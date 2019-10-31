@@ -25,15 +25,6 @@ ___
 <center> 
 ![center](http://mindtastik.com/wp-content/uploads/2019/04/Meditation-for-hapiness-calm-success.jpg)
 </center> 
- 
-<center> 
-<<<<<<< HEAD
-![center](../competencia/medi.jpg)
-=======
-**"Quien mira para afuera sueña quien mira para adentro despierta"**
->>>>>>> d108a356666dc04929ff42212c1f8db9dea95133
-</center> 
-
 
 
 #### Pasos para aprender a meditar:
