@@ -19,7 +19,7 @@ ___
 >**"Quien mira para afuera sueña quien mira para adentro despierta"**
 </center> 
 <center> 
-![center](/Users/osita/competencia/medi.jpg)
+![center](../competencia/medi.jpg)
 </center> 
 
 
