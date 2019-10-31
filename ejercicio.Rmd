@@ -13,6 +13,8 @@ La meditación es una práctica en la cual el individuo entrena la mente o induc
 
 El término meditación se refiere a un amplio espectro de prácticas que incluyen técnicas diseñadas para promover la relajación, construir energía interna o fuerza de vida (Qì, ki, chi, prāṇa, etc.) y desarrollar compasión, amor, paciencia, generosidad y perdón. Una forma particularmente ambiciosa de meditación tiene como fin conseguir sostener la concentración en un punto sin esfuerzo, enfocado a habilitar en su practicante un estado de bienestar en cualquier actividad de la vida.
 
+hols amigos
+
 ```{r cars}
 summary(cars) 
 ```
