@@ -1,62 +1,428 @@
 ---
-Title: "las cosas que amamamos"
-output: html_document
+title: "**Ejercicio Final**"
+output:
+  rmdformats::material:
+    highlight: kate
+    self_contained: true
+    code_folding: show
+    thumbnails: true
+    gallery: false
+    fig_width: 2
+    fig_height: 2
+    df_print: kable
 ---
 
 
-#### MEDITACION
+```{r knitr_init, echo=FALSE, results="asis", cache=FALSE}
+library(knitr)
+library(rmdformats)
+
+## Opciones de Presentacion
+options(max.print = "75")
+opts_chunk$set(echo = FALSE,
+	             cache = FALSE,
+               prompt = FALSE,
+               tidy = FALSE,
+               comment = NA,
+               message = FALSE,
+               warning = FALSE)
+opts_knit$set(width = 75)
+```
+
+# Presentación
+
+
+
+#### 
+
+
+Trabajo Final R
+
+
+
+Estudiante : María José Velandia Zambrano
+
+
+
+Profesor : Carlos J. Gil Bellosta  
+
+
+Master Big Data & Analytics  
+
+
+
+EAE Business School  
+2019
+
+# Tabla de Contenido 
+
+### Presentacion Final         
+
+
+
+
+1. Objetivo   
+
+
+2. Expresiones regulares  
+
+
+3. Recursos de Markdown  
+
+
+4. Tema Libre (El cine)
+
+
+5. Gráficas
+
+
+
+5. Referencias
+
+
+
+
+# Objetivo
+
+
+El objetivo de éste ejercicio es validar el conocimiento y  las habilidades adquiridas en el curso de R a través de la creatividad e investigación al realizar la presentación de informes.
+
+
+# Expresiones Regulares
+
+Las expresiones regulares se tratan de patrones de secuencias de  caracteres que se emplean para comprobar si una cadena de texto se ajusta a un formato específico.
+
+Por ejemplo, puede que una cadena deba contener dígitos numéricos, pero no espacios en blanco, o letras o signos de puntuación o que se quiera  comprobar que una cadena contiene una dirección de correo electrónico correctamente escrita.
+En estos casos se crea un patrón que define el formato al que debe ajustarse una cadena y luego se compara con la misma. La forma de hacer estas comparaciones depende de cada lenguaje específico.
+
+
+
+## ¿Y si comparamos? {.tabset}
+
+En el primer tab se ilustra como se crean las expresiones regulares en el lenguaje de programación JavaScript y en el segundo tab encontrarás cómo se crean en expresiones regulares en Python.
+
+### Creación en Javascript
+
+El uso de expresiones regulares en JavaScript es una buena manera de prevalidar el formato de ciertos datos en el lado del cliente, sin necesidad de recurrir a llamadas al servidor. Sin embargo, la forma de hacerlo es adecuada, también, en entorno de API’s de Node JS (aunque el uso de Node JS no será objeto de estudio en este artículo, dado que es un tema tan amplio que requeriría su propia serie de artículos.
+
+Esta es la forma más simple, antigua y rudimentaria de uso de expresiones regulares, pero también perfectamente válida para códigos simples. Supongamos que tenemos un campo de texto en la página, llamado CampoCorreo, destinado a que el usuario introduzca un correo electrónico. Lo que queremos es que, por ejemplo, al envío del formulario (evento onSubmit) se ejecute una función que valide la dirección de correo para comprobar si se ajusta a formato y, en caso de no hacerlo, no permita enviar el formulario. La función de nuestro ejemplo se va a llamar ValidarCorreo, y el código podría quedar así:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RegExp</title>
+</head>
+<body>
+	<form action="recibir_formulario.php" onsubmit="javascript: return ValidarCorreo();">
+		Correo Electrónico:
+		<input type="text" id="CampoCorreo" name="CampoCorreo">
+		<br>
+		<input type="submit" value="Enviar">
+	</form>
+ 
+	<script language="javascript">
+		var ExpresionCorreo = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+ 
+		function ValidarCorreo(){
+			if (ExpresionCorreo.test(document.getElementById('CampoCorreo').value)){
+				return true;
+			} else {
+				alert("El correo no es válido");
+				return false;
+			}
+		}
+	</script>
+</body>
+</html>
+```
+
+
+### Creación en Python
+
+Ya vimos cómo validar un correo o email en JavaScript. Ahora hagamos lo mismo con Python, veamos una forma de saber si el usuario puso un correo válido.
+
+Aunque el correo parezca válido, no lo sabremos hasta que lo comprobemos enviando un mensaje con un token o algo similar; pero bueno, el punto es ver si un correo es válido según su forma como cadena.
+
+Al final, un usuario podría poner uno que sea temporal, o que sea falso, por lo que no importa mucho la validación, sino la comprobación de la existencia.
+
+```
+def es_correo_valido(correo):
+    expresion_regular = r"(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])"
+    return re.match(expresion_regular, correo) is not None
+
+``` 
+
+
+
+
+## Recursos de Markdown {.tabset .tabset-fade .tabset-pills}
+
+Markdown es un lenguaje de marcado que facilita la aplicación de formato a un texto empleando una serie de caracteres de una forma especial. En principio, fue pensado para elaborar textos cuyo destino iba a ser la web con más rapidez y sencillez que si estuviésemos empleando directamente HTML. Y si bien ese suele ser el mejor uso que podemos darle, también podemos emplearlo para cualquier tipo de texto, independientemente de cual vaya a ser su destino.
+
+Vamos a comparar dos fuentes distintas que nos proporcionen información acerca de la creación de documentos en markdown y sacar nuestras propias conclusiones.   
+
+
+
+
+### Primera Fuente
+
+su utilización. En principio, hay que reconocer que quienes más lo apreciarán son aquellos que publican contenido en la web de manera regular. Sin embargo, cualquiera que use un teclado como herramienta principal de trabajo podrá sacarle partido. Veamos entonces algunas de las ventajas que tiene su uso. El peso que tenga cada una dependerá de vosotros y considerarlas os ayudará a decidir si debéis probarlo o no.
+
+
+Una vez que te acostumbras y conoces mínimamente la sintaxis, completas el texto más rápido. Si lo que hacemos normalmente es seguir un proceso del tipo "escritura -> revisión -> formato", las partes de revisión y formato las podemos hacer al mismo tiempo sin abandonar el teclado.
+
+Además, la sintaxis de Markdown está pensada para que resulte más fácil de leer. Es decir, que los elementos de formato no estorben la lectura, como sí ocurre en HTML. Veamos un ejemplo sencillo, primero escrito con Markdown y luego con HTML
+
+El HTML básico, que es el que necesitamos para dar formato a un texto, es sumamente sencillo de usar. Pero también es muy fácil cometer errores. El más habitual: olvidarse de cerrar una etiqueta de manera adecuada. Markdown hace que un error tan común como éste no se produzca.
+
+A mucha gente le gusta escribir en texto plano, utilizando editores de texto o procesadores minimalistas por una cuestión de concentración: muchas veces, no necesitamos tantas herramientas como las que nos ofrece un procesador como Word, especialmente cuando todo lo que vamos a hacer es escribir un texto con un formato básico. De hecho, en ocasiones tal cantidad de herramientas sólo consiguen distraernos e incluso molestar.
+
+Muchos de estos editores guardan los archivos en formato de texto plano. Usar Markdown nos permite que no tengamos que dejar de utilizar nuestra herramienta favorita para darle formato a un texto cuando sea necesario.
+
+Si bien existen aplicaciones para dispositivos móviles que nos permiten aplicar formato a un texto, resulta bastante incómodo hacerlo por la misma naturaleza del sistema táctil. Si usamos una aplicación que soporta Markdown, tan sólo se trata de escribir unos pocos caracteres más. Es más rápido y ágil, especialmente si vamos aplicando el formato a medida que escribimos.
+
+
+Para complementar está información ingresa a:
+[https://www.genbeta.com/guia-de-inicio/que-es-markdown-para-que-sirve-y-como-usarlo](https://www.genbeta.com/guia-de-inicio/que-es-markdown-para-que-sirve-y-como-usarlo)
+
+### Segunda Fuente
+
+En este artículo vamos a hablar de los ficheros .md (MarkDown). En concreto, para esto nos interesa un fichero específico, con nombre README.md, que GitHub emplea para poner como página principal, o portada, de cada repositorio (de cada proyecto alojado, en la práctica).
+
+Para complementar está información ingresa a:
+[https://eldesvandejose.com/tag/archivos-md/](https://eldesvandejose.com/tag/archivos-md/)     
+
+
+
+
+
+
+
+## Comentarios    
 
 ___
 
 
-La meditación es una práctica en la cual el individuo entrena la mente o induce un modo de conciencia, ya sea para conseguir algún beneficio o para reconocer mentalmente un contenido sin sentirse identificado con ese contenido, o como un fin en sí misma.
+**Acerca de expresiones regulares:**
 
-El término meditación se refiere a un amplio espectro de prácticas que incluyen técnicas diseñadas para promover la relajación, construir energía interna o fuerza de vida (Qì, ki, chi, prāṇa, etc.) y desarrollar compasión, amor, paciencia, generosidad y perdón. Una forma particularmente ambiciosa de meditación tiene como fin conseguir sostener la concentración en un punto sin esfuerzo, enfocado a habilitar en su practicante un estado de bienestar en cualquier actividad de la vida.
+1. Por temas de implementacion y como se ilustra en el comparativo de la creación de expresiones regulares es más sencillo en un lenguaje de alto nivel como Python, pero eso siempre depende de en que lenguaje de programación se este implementado la solución que se le ofrecer al usuario final, por tanto al final del día y como es casi costumbre en los lenguajes de programación hay que enfocarse en la sintaxis puesto que la lógica es la misma.
+
+**Markdown:**
+
+1. En cuanto al contenido expuesto por las dos fuentes distintas acerca de markdown claramente la fuente uno ilustra con mayor propiedad la información con ejemplos e imágenes a las cuales puedes acceder ingresando a su página, la segunda fuente se queda pobre exponiendo el contenido del mismo.
 
 
-
-
-
-
+# El cine
 ___
 
+Los pasos que ha dado el cine a lo largo de más de un siglo de existencia confirman un trayecto histórico plagado de realidades que, en forma de películas, han consolidado una estructura creativa e industrial que ha permitido superar los problemas que han surgido al cabo de los años. En su evolución el cine ha consolidado un lenguaje, ha definido trayectos artísticos, modelos empresariales que han favorecido el surgimiento de carreras artísticas de todo tipo, construidas sobre modelos y representaciones que, en muchos casos, han trascendido su propio ámbito cinematográfico. En el camino, el cine se vio marcado por todo tipo de vanguardias artísticas, movimientos culturales, circunstancias políticas y conflictos bélicos.
 
+Comparto una imágen que se quedó conmigo luego de ver una de mis peliculas favoritas comer,rezar,amar espero sea de su gusto y les recuerde la importancia de estar aqui viviendo en la tierra en tiempo presente, en su momento fue una de las películas que me llevaron al camino de la meditación y el mundo espiritual.
+
+___
 
 <center> 
 ![center](http://mindtastik.com/wp-content/uploads/2019/04/Meditation-for-hapiness-calm-success.jpg)
 </center> 
- 
-<center> 
-**"Quien mira para afuera sueña quien mira para adentro despierta"**
-</center> 
 
-#### Pasos para aprender a meditar:
+
+## A quién no le gusta el cine?
+
+Desde luego la magia del cine es tan maravillosa que todos nos hemos dejado envolver por una pelicula que a través de su forma de contar historias, sus paisajes , música o la sensacion que nos deja en el corazón se vuelven films para repetir en familia o con amigos y pareja.
+
+El género sirve para etiquetar los contenidos de un filme, caracterizando los temas y componentes narrativos que relacionan dicha película con otras encuadrables en un mismo conjunto. En suma, se trata de categorías temáticas, codificadas a lo largo de los años e inteligibles por parte de los espectadores. Esta forma tipificada de narrar hereda muchas de esas categorías de la literatura, y muy singularmente de la narrativa popular, que reitera ciertos elementos para simplificar la comprensión del relato. Dado que ese tipo de convención aún predomina en el ciclo productivo del cine contemporáneo, resulta útil explorar los orígenes y evolución de los géneros más característicos -el terror, la comedia, la ciencia-ficción, etc.-, aún hoy reconocibles por la audiencia que acude a las salas de exhibición.
+
+Un espectáculo de masas como es el cine, necesita de una infraestructura industrial sólida que le permita evolucionar en el tiempo y ofrecer un conjunto de productos con los que los espectadores se sientan interesados para que dicha industria pueda seguir viva. Las transformaciones que se han apreciado en su dinámica interna fueron propiciadas por sus clientes habituales, por el progreso tecnológico y por el nacimiento de otros medios que marcaron los flujos de consumo en la sociedad de cada época. Lo que comenzó siendo un espectáculo de barraca de feria se ha convertido con el paso de los años en una industria poderosa y en uno de los negocios más importantes de los países más industrializados.    
+
+
+
+
+
+Dicho esto he seleccionado la Web sensacine.com en donde sus usarios han votado por las mejores peliculas que el cine ha producido.
+
+
+Si quieres tener mas informacion ingresa a la página fuente:
+[http://www.sensacine.com/peliculas/mejores/nota-espectadores/](link)
+
+
+He realizado el webscraping de la página sensacine.com sobre los campos que se visualizan en el recuadro verde y que
+corresponden a los campos : estreno, director, reparto y género.
+
+![webscraping.](webscraping3.png)
+
+Como resultado he cargado la siguiente tabla con las mejores películas según los usuarios de la página web:
+
+
+```{r,layout="l-body-outset"} 
+#======================================================================================
+#LIBRERIAS USADAS
+#======================================================================================
+library(rvest)
+library(rmdformats)
+library(data.table)
+library(lubridate)
+library(rgeolocate)
+library(tables)
+#Install the relevant libraries - do this one time
+library(data.table)
+library(dplyr)
+library(formattable)
+library(tidyr)
+library(rmarkdown)
+
+#======================================================================================
+# Webscraping de la URL http://www.sensacine.com/peliculas/mejores/nota-espectadores/
+#======================================================================================
+ids <- 1:15
+urls <- sapply(ids, function(i){
+  url <- paste("http://www.sensacine.com/peliculas/mejores/nota-espectadores/?page=",i,sep = "") # Trae las páginas de la webpage
+})
+
+divs_peli <- sapply(urls,function(url){
+   pagina_html <- read_html(url)
+   peliculas <- html_nodes(pagina_html,xpath = '//div[@class="data_box"]/div/div')
+   
+})
+
+matriz_pelis <- sapply(divs_peli,function(pelicula){
+  # Trae todos los elementos div que estan dentro de un elemento li
+   
+    atributo_lis <- html_nodes(pelicula,'li div')
+    titulo <- html_node(pelicula,'h2 a')  # trae el unico elemento a que esta dentro de un elemento h2
+
+    # Datos de mi nuevo Data Frame
+    titulo <- html_text(titulo)
+    anio <- html_text(atributo_lis[1])
+    director <- html_text(atributo_lis[2])
+    reparto <- html_text(atributo_lis[3])
+    genero <- html_text(atributo_lis[4])
     
-
-  1. Ponte ropa cómoda
-Lo primero que debes hacer para meditar y estar en el aquí y el ahora es llevar ropa cómoda. Quitarse los zapatos y elegir una prenda de vestir ancha es la mejor alternativa para sentirte listo para meditar. Olvídate de prendas ajustadas y quítate el reloj u otros complementos que puedan ser molestos.
-
-2. Busca un lugar tranquilo
-Es necesario encontrar un lugar que te permita estar relajado y sin interrupciones ni interferencias. Puede ser la habitación de tu casa, la orilla del mar o tu jardín... Cualquier lugar es bueno si te permite estar cómodo y centrado, totalmente inmerso en la actividad que vas a iniciar.
-
-3. Siéntate de manera correcta
-Para meditar debes sentarte de manera correcta, es decir, en el suelo con la espalda recta, pero sin tensiones, respirando hondo y manteniendo los hombros y brazos relajados. Algunas personas prefieren sentarse en una silla o de rodillas en vez de la clásica postura, y también existe la meditación tumbada. Sea cual sea la posición que adoptes, la espalda siempre debe estar recta y el cuerpo, especialmente los hombros y brazos, relajados.
-
-4. Céntrate en un objeto
-Céntrate en un objeto o en la respiración (con los ojos cerrados) cuando te inicias en la práctica meditativa. Más adelante, puedes realizar otros tipos de meditación, como el “escáner corporal” o la meditación centrada en los sonidos.
-
-5. Acepta los pensamientos que surgen y sigue adelante
-Es habitual que, durante la práctica de la meditación, surjan distintos pensamientos: nuestros problemas personales, la incomodidad del momento o la inseguridad de estar haciendo bien la meditación o no (algo que suele ocurrir cuando nos iniciamos en esta práctica). Pero esto es algo normal y, por tanto, debemos aceptarlo.
-
-
-6. Aumenta tu tiempo de meditación de forma progresiva
-Cuando te inicias en la meditación, debes empezar poco a poco para luego ir aumentando el tiempo. Es ideal comenzar con la meditación de un minuto, para progresivamente llegar a los 20 o 30 minutos diarios que te ayudarán a mejorar tu bienestar. Échale un vistazo a este vídeo para saber qué es la meditación de un minuto:
+    # Limpiar todos los campos de la tabla
+    titulo  <-  gsub("\n","",titulo)
+    estreno <- gsub("\n","",anio)
+    anio <- substr(estreno,1,10)
+    #anio <- format(dmy(anio), "%Y-%m-%d")
+    duracion <- substr(estreno,11,20)
+    duracion <- gsub("\\(|\\)","",duracion)
+    director <- gsub("\n","",director)
+    reparto <-  gsub("\n","",reparto)
+    genero <-  gsub("\n","",genero)
+    # Retornar la solucion
+    matriz <- matrix(c(titulo,anio,duracion,director,reparto,genero))
+   
+})
+# Crear la tabla de todas las peliculas y renombrar sus campos
+tabla_peliculas <- as.data.frame(t(matriz_pelis))
+setnames(tabla_peliculas, old=c("V1","V2","V3","V4","V5","V6"), new=c("titulo","año","duracion","director","reparto","genero"))
 
 
-7. Añádelo a tu rutina diaria
-Tras leer los pasos anteriores, ahora ya estás listo para hacer de la meditación un hábito saludables. Con la práctica te convertirás en un gran meditador, lo que te ayudará a lograr los beneficios de esta milenaria práctica.
+ DT::datatable(tabla_peliculas,
+         extensions = c('FixedColumns',"FixedHeader"),
+           options = list(scrollX = TRUE,
+                          paging=TRUE,
+                          fixedHeader=TRUE))
 
 
 
-Si quieres tener mas informacion ingresa a:
-[http://comomeditar.org/](http://comomeditar.org/)
+```
+
+Este es el top 5 de los directores más famosos:
+
+``` {r} 
+library(rvest)
+library(rmdformats)
+library(data.table)
+library(lubridate)
+library(rgeolocate)
+library(tables)
+#Install the relevant libraries - do this one time
+library(data.table)
+library(dplyr)
+library(formattable)
+library(tidyr)
+library(rmarkdown)
+# set colors
+ customGreen0 = "#DeF7E9"
+ customGreen = "#71CA97"
+ customRed = "#ff7f7f"
+
+# formatear la salida de la tabla con el director mas famosos
+directores <- table(tabla_peliculas$director)
+famosos <- as.data.frame(tail(sort(directores),5))
+setnames(famosos,old=c("Var1","Freq"), new=c("director","cantidad peliculas"))
+
+
+formattable(famosos, align =c("l","c"), list(
+    `director` = formatter("span", style = ~ style(color = "black",font.weight = "bold")),
+    `cantidad peliculas`= color_tile(customGreen, customGreen0)
+))
+
+quienes <- table(tabla_peliculas$director)
+famosos <- as.data.frame(tail(sort(quienes),5))
+mas_famoso <- tail(famosos,1)
+peliculas_famoso <- tabla_peliculas[tabla_peliculas$director == toString(mas_famoso$Var1),]
+
+ formattable(peliculas_famoso, align =c("l","l","l","l","l","l"), list(
+   `titulo` = formatter("span", style = ~ style(color = "black",font.weight = "bold")),
+   `año`= color_tile(customGreen, customGreen0),
+   `duracion`= color_tile(customGreen, customGreen0),
+   `director`= color_tile(customGreen, customGreen0),
+   `reparto`= color_tile(customGreen, customGreen0),
+   `genero`= color_tile(customGreen, customRed)
+ ))
+ 
+```
+
+# Gráficas
+
+## Base graphics
+
+## ggplot2
+
+Same with `ggplot2` :
+
+```{r, fig.cap="Beautiful ggplot2 histogram, really"}
+library(ggplot2)
+d <- data.frame(x=rnorm(100))
+ggplot(data=d) + geom_histogram(aes(x=x), bins = 30)
+```
+
+
+
+# Referencias
+
+
+
+
+
+1. https://www.datadreaming.org/post/r-markdown-theme-gallery/
+
+2. https://github.com/juba/rmdformats/blob/master/R/material.R
+
+3. https://rdrr.io/find/?repos=cran%2Cbioc%2Crforge%2Cgithub&fuzzy_slug=material
+
+4. https://github.com/jgm/highlighting-kate/blob/master/xml/markdown.xml
+
+5. https://cran.r-project.org/web/packages/rmdformats/vignettes/introduction.html
+
+6. https://eldesvandejose.com/2017/08/18/expresiones-regulares-general/
+
+7. https://eldesvandejose.com/2017/08/18/expresiones-regulares-en-javascript/
+
+8. https://parzibyte.me/blog/2018/12/04/comprobar-correo-electronico-python/
+
+9. https://www.genbeta.com/guia-de-inicio/que-es-markdown-para-que-sirve-y-como-usarlo
+
+10. https://eldesvandejose.com/tag/archivos-md/
+
+11. https://lamenteesmaravillosa.com/estudios-cientificos-sobre-la-meditacion/
+
+12. https://www.genbeta.com/guia-de-inicio/que-es-markdown-para-que-sirve-y-como-usarlo
+
+13. http://www.sensacine.com/peliculas/mejores/nota-espectadores/
+
+14. https://rstudio-pubs-static.s3.amazonaws.com/435161_fcef306590d54b1aa5f49c0abf5f612e.html
+
+15. http://recursos.cnice.mec.es/media/cine/bloque5/index.html
