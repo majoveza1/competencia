@@ -14,5 +14,8 @@ library(dplyr)
 library(formattable)
 library(tidyr)
 library(rmarkdown)
+library(ggplot2)
+library(knitr)
+library(rmdformats)
 
 
