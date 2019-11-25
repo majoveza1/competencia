@@ -4,8 +4,9 @@ output: html_document
 ---
 
 
-### Meditacion:
+#### MEDITACION
 
+___
 
 
 La meditación es una práctica en la cual el individuo entrena la mente o induce un modo de conciencia, ya sea para conseguir algún beneficio o para reconocer mentalmente un contenido sin sentirse identificado con ese contenido, o como un fin en sí misma.
@@ -13,19 +14,23 @@ La meditación es una práctica en la cual el individuo entrena la mente o induc
 El término meditación se refiere a un amplio espectro de prácticas que incluyen técnicas diseñadas para promover la relajación, construir energía interna o fuerza de vida (Qì, ki, chi, prāṇa, etc.) y desarrollar compasión, amor, paciencia, generosidad y perdón. Una forma particularmente ambiciosa de meditación tiene como fin conseguir sostener la concentración en un punto sin esfuerzo, enfocado a habilitar en su practicante un estado de bienestar en cualquier actividad de la vida.
 
 
+
+
+
+
 ___
 
+
+
 <center> 
->**"Quien mira para afuera sueña quien mira para adentro despierta"**
+![center](http://mindtastik.com/wp-content/uploads/2019/04/Meditation-for-hapiness-calm-success.jpg)
 </center> 
+ 
 <center> 
-![center](/Users/osita/competencia/medi.jpg)
+**"Quien mira para afuera sueña quien mira para adentro despierta"**
 </center> 
 
-
-
-
-### Pasos para aprender a meditar:
+#### Pasos para aprender a meditar:
     
 
   1. Ponte ropa cómoda
@@ -50,3 +55,8 @@ Cuando te inicias en la meditación, debes empezar poco a poco para luego ir aum
 
 7. Añádelo a tu rutina diaria
 Tras leer los pasos anteriores, ahora ya estás listo para hacer de la meditación un hábito saludables. Con la práctica te convertirás en un gran meditador, lo que te ayudará a lograr los beneficios de esta milenaria práctica.
+
+
+
+Si quieres tener mas informacion ingresa a:
+[http://comomeditar.org/](http://comomeditar.org/)
