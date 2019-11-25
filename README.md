@@ -1,5 +1,5 @@
 # Ejercicio Final
-En este archivo encontraras la solució del ejercicio final planteado en la materia R impartida en la universidad EAE de España.
+En este archivo encontraras la solució del ejercicio final planteado en la materia R, impartida en la universidad EAE de España.
 
 Para poder visualizar el contenido del ejercicio con éxito debes bajar el contenido completo de los archivos.
 Las dependencias asociadas a la correcta visualización de éste documento son las siguientes librerias que se usaron en la implementación del mismo.
@@ -10,7 +10,6 @@ library(data.table)
 library(lubridate)
 library(rgeolocate)
 library(tables)
-#Install the relevant libraries - do this one time
 library(dplyr)
 library(formattable)
 library(tidyr)
