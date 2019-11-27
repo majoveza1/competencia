@@ -2,21 +2,48 @@
 title: "**Ejercicio Final**"
 output:
   rmdformats::material:
-    highlight: kate
+    highlight: haddock
     self_contained: true
-    code_folding: show
     thumbnails: true
-    gallery: false
-    fig_width: 2
-    fig_height: 2
+    gallery: true
+    fig_width: 7
+    fig_height: 4
+    lightbox : true 
+    se_bookdown : true
     df_print: kable
 ---
 
+``` {css,echo=FALSE}
+
+.header-panel {
+    background-color: #bd62a0;
+    min-height: 144px;
+    position: relative;
+    z-index: 3;
+    background-image: url('hermoso1.jpeg');
+    
+}
+.menu ul li.active {
+    background-color: #e3b8d5;
+    position: relative;
+}
+
+img {
+  background-color: pink;
+  padding: 5px;
+  border: 1px solid pink;
+  border-radius: 3px;
+  margin: 0 5px;
+  max-width: 100%;
+}
+```
 
 ```{r knitr_init, echo=FALSE, results="asis", cache=FALSE}
+#======================================================================================
+#LIBRERIAS USADAS
+#======================================================================================
 library(knitr)
 library(rmdformats)
-
 ## Opciones de Presentacion
 options(max.print = "75")
 opts_chunk$set(echo = FALSE,
@@ -159,7 +186,7 @@ def es_correo_valido(correo):
 
 ## Recursos de Markdown {.tabset .tabset-fade .tabset-pills}
 
-Markdown es un lenguaje de marcado que facilita la aplicación de formato a un texto empleando una serie de caracteres de una forma especial. En principio, fue pensado para elaborar textos cuyo destino iba a ser la web con más rapidez y sencillez que si estuviésemos empleando directamente HTML. Y si bien ese suele ser el mejor uso que podemos darle, también podemos emplearlo para cualquier tipo de texto, independientemente de cual vaya a ser su destino.
+Markdown es un lenguaje de marcado que facilita la aplicación de formato a un texto empleando una serie de caracteres de una forma especial. En principio, fue pensado para elaborar textos cuyo destino iba a ser la web con más rapidez y sencillez que si estuviésemos empleando directamente HTML, y si bien ese suele ser el mejor uso que podemos darle, también podemos emplearlo para cualquier tipo de texto, independientemente de cual vaya a ser su destino.
 
 Vamos a comparar dos fuentes distintas que nos proporcionen información acerca de la creación de documentos en markdown y sacar nuestras propias conclusiones.   
 
@@ -168,7 +195,7 @@ Vamos a comparar dos fuentes distintas que nos proporcionen información acerca 
 
 ### Primera Fuente
 
-su utilización. En principio, hay que reconocer que quienes más lo apreciarán son aquellos que publican contenido en la web de manera regular. Sin embargo, cualquiera que use un teclado como herramienta principal de trabajo podrá sacarle partido. Veamos entonces algunas de las ventajas que tiene su uso. El peso que tenga cada una dependerá de vosotros y considerarlas os ayudará a decidir si debéis probarlo o no.
+Su utilización. En principio, hay que reconocer que quienes más lo apreciarán son aquellos que publican contenido en la web de manera regular. Sin embargo, cualquiera que use un teclado como herramienta principal de trabajo podrá sacarle partido. Veamos entonces algunas de las ventajas que tiene su uso. El peso que tenga cada una dependerá de vosotros y considerarlas os ayudará a decidir si debéis probarlo o no.
 
 
 Una vez que te acostumbras y conoces mínimamente la sintaxis, completas el texto más rápido. Si lo que hacemos normalmente es seguir un proceso del tipo "escritura -> revisión -> formato", las partes de revisión y formato las podemos hacer al mismo tiempo sin abandonar el teclado.
@@ -219,7 +246,7 @@ ___
 
 Los pasos que ha dado el cine a lo largo de más de un siglo de existencia confirman un trayecto histórico plagado de realidades que, en forma de películas, han consolidado una estructura creativa e industrial que ha permitido superar los problemas que han surgido al cabo de los años. En su evolución el cine ha consolidado un lenguaje, ha definido trayectos artísticos, modelos empresariales que han favorecido el surgimiento de carreras artísticas de todo tipo, construidas sobre modelos y representaciones que, en muchos casos, han trascendido su propio ámbito cinematográfico. En el camino, el cine se vio marcado por todo tipo de vanguardias artísticas, movimientos culturales, circunstancias políticas y conflictos bélicos.
 
-Comparto una imágen que se quedó conmigo luego de ver una de mis peliculas favoritas comer,rezar,amar espero sea de su gusto y les recuerde la importancia de estar aqui viviendo en la tierra en tiempo presente, en su momento fue una de las películas que me llevaron al camino de la meditación y el mundo espiritual.
+Comparto una imágen que se quedó conmigo luego de ver una de mis peliculas favoritas comer,rezar,amar espero sea de su gusto y le recuerde la importancia de estar aqui viviendo en la tierra en tiempo presente, en su momento fue una de las películas que me llevaron al camino de la meditación y el mundo espiritual.
 
 ___
 
@@ -232,7 +259,7 @@ ___
 
 Desde luego la magia del cine es tan maravillosa que todos nos hemos dejado envolver por una pelicula que a través de su forma de contar historias, sus paisajes , música o la sensacion que nos deja en el corazón se vuelven films para repetir en familia o con amigos y pareja.
 
-El género sirve para etiquetar los contenidos de un filme, caracterizando los temas y componentes narrativos que relacionan dicha película con otras encuadrables en un mismo conjunto. En suma, se trata de categorías temáticas, codificadas a lo largo de los años e inteligibles por parte de los espectadores. Esta forma tipificada de narrar hereda muchas de esas categorías de la literatura, y muy singularmente de la narrativa popular, que reitera ciertos elementos para simplificar la comprensión del relato. Dado que ese tipo de convención aún predomina en el ciclo productivo del cine contemporáneo, resulta útil explorar los orígenes y evolución de los géneros más característicos -el terror, la comedia, la ciencia-ficción, etc.-, aún hoy reconocibles por la audiencia que acude a las salas de exhibición.
+El género sirve para etiquetar los contenidos de un filme, caracterizando los temas y componentes narrativos que relacionan dicha película con otras encuadrables en un mismo conjunto. En suma, se trata de categorías temáticas, codificadas a lo largo de los años e inteligibles por parte de los espectadores. Esta forma tipificada de narrar hereda muchas de esas categorías de la literatura, y muy singularmente de la narrativa popular, que reitera ciertos elementos para simplificar la comprensión del relato. Dado que ese tipo de convención aún predomina en el ciclo productivo del cine contemporáneo, resulta útil explorar los orígenes y evolución de los géneros más característicos el terror, la comedia, la ciencia-ficción, etc.aún hoy reconocibles por la audiencia que acude a las salas de exhibición.
 
 Un espectáculo de masas como es el cine, necesita de una infraestructura industrial sólida que le permita evolucionar en el tiempo y ofrecer un conjunto de productos con los que los espectadores se sientan interesados para que dicha industria pueda seguir viva. Las transformaciones que se han apreciado en su dinámica interna fueron propiciadas por sus clientes habituales, por el progreso tecnológico y por el nacimiento de otros medios que marcaron los flujos de consumo en la sociedad de cada época. Lo que comenzó siendo un espectáculo de barraca de feria se ha convertido con el paso de los años en una industria poderosa y en uno de los negocios más importantes de los países más industrializados.    
 
@@ -247,26 +274,26 @@ Si quieres tener mas informacion ingresa a la página fuente:
 [http://www.sensacine.com/peliculas/mejores/nota-espectadores/](link)
 
 
-He realizado el webscraping de la página sensacine.com sobre los campos que se visualizan en el recuadro verde y que
-corresponden a los campos : estreno, director, reparto y género.
+He realizado el webscraping sobre los campos que se visualizan en el recuadro verde de la imágen y que
+corresponden a : estreno, director, reparto y género.   
 
-![webscraping.](webscraping3.png)
+<center> 
+![webscraping.](webscraping3.png)    
+</center> 
+  
+
+
 
 Como resultado he cargado la siguiente tabla con las mejores películas según los usuarios de la página web:
 
 
 ```{r,layout="l-body-outset"} 
-#======================================================================================
-#LIBRERIAS USADAS
-#======================================================================================
 library(rvest)
 library(rmdformats)
 library(data.table)
 library(lubridate)
 library(rgeolocate)
 library(tables)
-#Install the relevant libraries - do this one time
-library(data.table)
 library(dplyr)
 library(formattable)
 library(tidyr)
@@ -280,7 +307,7 @@ urls <- sapply(ids, function(i){
   url <- paste("http://www.sensacine.com/peliculas/mejores/nota-espectadores/?page=",i,sep = "") # Trae las páginas de la webpage
 })
 
-divs_peli <- sapply(urls,function(url){
+divs_peli <- sapply(urls,function(url){  # Trae los divs
    pagina_html <- read_html(url)
    peliculas <- html_nodes(pagina_html,xpath = '//div[@class="data_box"]/div/div')
    
@@ -288,7 +315,6 @@ divs_peli <- sapply(urls,function(url){
 
 matriz_pelis <- sapply(divs_peli,function(pelicula){
   # Trae todos los elementos div que estan dentro de un elemento li
-   
     atributo_lis <- html_nodes(pelicula,'li div')
     titulo <- html_node(pelicula,'h2 a')  # trae el unico elemento a que esta dentro de un elemento h2
 
@@ -309,7 +335,7 @@ matriz_pelis <- sapply(divs_peli,function(pelicula){
     director <- gsub("\n","",director)
     reparto <-  gsub("\n","",reparto)
     genero <-  gsub("\n","",genero)
-    # Retornar la solucion
+    # Retornar todas las peluculas
     matriz <- matrix(c(titulo,anio,duracion,director,reparto,genero))
    
 })
@@ -317,54 +343,49 @@ matriz_pelis <- sapply(divs_peli,function(pelicula){
 tabla_peliculas <- as.data.frame(t(matriz_pelis))
 setnames(tabla_peliculas, old=c("V1","V2","V3","V4","V5","V6"), new=c("titulo","año","duracion","director","reparto","genero"))
 
-
- DT::datatable(tabla_peliculas,
+# Mostrar el contenido de la tabla páginado por el tamaño de la misma
+DT::datatable(tabla_peliculas,
          extensions = c('FixedColumns',"FixedHeader"),
            options = list(scrollX = TRUE,
                           paging=TRUE,
                           fixedHeader=TRUE))
-
-
 
 ```
 
 Este es el top 5 de los directores más famosos:
 
 ``` {r} 
-library(rvest)
-library(rmdformats)
-library(data.table)
-library(lubridate)
-library(rgeolocate)
-library(tables)
-#Install the relevant libraries - do this one time
-library(data.table)
-library(dplyr)
-library(formattable)
-library(tidyr)
-library(rmarkdown)
+#======================================================================================
+# Visualización de Tablas
+#======================================================================================
 # set colors
- customGreen0 = "#DeF7E9"
- customGreen = "#71CA97"
- customRed = "#ff7f7f"
+customGreen0 = "#DeF7E9"
+customGreen = "#71CA97"
+customRed = "#ff7f7f"
 
-# formatear la salida de la tabla con el director mas famosos
+# encontrar el top de los directores más famosos
 directores <- table(tabla_peliculas$director)
 famosos <- as.data.frame(tail(sort(directores),5))
 setnames(famosos,old=c("Var1","Freq"), new=c("director","cantidad peliculas"))
 
-
+#formatear la salida de la tabla con el director mas famosos
 formattable(famosos, align =c("l","c"), list(
     `director` = formatter("span", style = ~ style(color = "black",font.weight = "bold")),
     `cantidad peliculas`= color_tile(customGreen, customGreen0)
 ))
 
+
+```
+Las Películas del director más famoso y su puesto en el ranking:
+
+``` {r,echo=FALSE} 
+#Visualualizar las peliculas del director más famoso
 quienes <- table(tabla_peliculas$director)
 famosos <- as.data.frame(tail(sort(quienes),5))
 mas_famoso <- tail(famosos,1)
 peliculas_famoso <- tabla_peliculas[tabla_peliculas$director == toString(mas_famoso$Var1),]
-
- formattable(peliculas_famoso, align =c("l","l","l","l","l","l"), list(
+ 
+formattable(peliculas_famoso, align =c("l","l","l","l","l","l"), list(
    `titulo` = formatter("span", style = ~ style(color = "black",font.weight = "bold")),
    `año`= color_tile(customGreen, customGreen0),
    `duracion`= color_tile(customGreen, customGreen0),
@@ -372,25 +393,19 @@ peliculas_famoso <- tabla_peliculas[tabla_peliculas$director == toString(mas_fam
    `reparto`= color_tile(customGreen, customGreen0),
    `genero`= color_tile(customGreen, customRed)
  ))
- 
+
 ```
 
 # Gráficas
 
-## Base graphics
 
-## ggplot2
-
-Same with `ggplot2` :
-
-```{r, fig.cap="Beautiful ggplot2 histogram, really"}
+```{r}
 library(ggplot2)
-d <- data.frame(x=rnorm(100))
-ggplot(data=d) + geom_histogram(aes(x=x), bins = 30)
+nacionalidad <- c('Nueva Zelanda','Estados Unidos','Reino Unido','Estados Unidos','Estados Unidos')
+famosos['nacionalidad'] <- nacionalidad
+famosos
+
 ```
-
-
-
 # Referencias
 
 
@@ -419,10 +434,9 @@ ggplot(data=d) + geom_histogram(aes(x=x), bins = 30)
 
 11. https://lamenteesmaravillosa.com/estudios-cientificos-sobre-la-meditacion/
 
-12. https://www.genbeta.com/guia-de-inicio/que-es-markdown-para-que-sirve-y-como-usarlo
 
-13. http://www.sensacine.com/peliculas/mejores/nota-espectadores/
+12. http://www.sensacine.com/peliculas/mejores/nota-espectadores/
 
-14. https://rstudio-pubs-static.s3.amazonaws.com/435161_fcef306590d54b1aa5f49c0abf5f612e.html
+13. https://rstudio-pubs-static.s3.amazonaws.com/435161_fcef306590d54b1aa5f49c0abf5f612e.html
 
-15. http://recursos.cnice.mec.es/media/cine/bloque5/index.html
+14. http://recursos.cnice.mec.es/media/cine/bloque5/index.html
