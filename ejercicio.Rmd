@@ -112,7 +112,7 @@ EAE Business School
 # Objetivo
 
 
-El objetivo de éste ejercicio es validar el conocimiento y  las habilidades adquiridas en el curso de R a través de la creatividad e investigación al realizar la presentación de informes.
+El objetivo de éste ejercicio es validar el conocimiento y  las habilidades adquiridas en el curso de R a través de la investigación al realizar la presentación del presente informe.
 
 
 # Expresiones Regulares
@@ -126,11 +126,11 @@ En estos casos se crea un patrón que define el formato al que debe ajustarse un
 
 ## ¿Y si comparamos? {.tabset}
 
-En el primer tab se ilustra como se crean las expresiones regulares en el lenguaje de programación JavaScript y en el segundo tab encontrarás cómo se crean en expresiones regulares en Python.
+En el primer tab se ilustra como se crea una expresion regular en el lenguaje de programación JavaScript en contraste con  el segundo tab en donde se evidencia cómo se crea una expresión regular en Python.
 
 ### Creación en Javascript
 
-El uso de expresiones regulares en JavaScript es una buena manera de prevalidar el formato de ciertos datos en el lado del cliente, sin necesidad de recurrir a llamadas al servidor. Sin embargo, la forma de hacerlo es adecuada, también, en entorno de API’s de Node JS (aunque el uso de Node JS no será objeto de estudio en este artículo, dado que es un tema tan amplio que requeriría su propia serie de artículos.
+El uso de expresiones regulares en JavaScript es una buena manera de prevalidar el formato de ciertos datos en el lado del cliente, sin necesidad de recurrir a llamadas al servidor. Sin embargo, la forma de hacerlo es adecuada, también, en entorno de API’s de Node JS.
 
 Esta es la forma más simple, antigua y rudimentaria de uso de expresiones regulares, pero también perfectamente válida para códigos simples. Supongamos que tenemos un campo de texto en la página, llamado CampoCorreo, destinado a que el usuario introduzca un correo electrónico. Lo que queremos es que, por ejemplo, al envío del formulario (evento onSubmit) se ejecute una función que valide la dirección de correo para comprobar si se ajusta a formato y, en caso de no hacerlo, no permita enviar el formulario. La función de nuestro ejemplo se va a llamar ValidarCorreo, y el código podría quedar así:
 
@@ -234,7 +234,7 @@ ___
 
 **Acerca de expresiones regulares:**
 
-1. Por temas de implementacion y como se ilustra en el comparativo de la creación de expresiones regulares es más sencillo en un lenguaje de alto nivel como Python, pero eso siempre depende de en que lenguaje de programación se este implementado la solución que se le ofrecer al usuario final, por tanto al final del día y como es casi costumbre en los lenguajes de programación hay que enfocarse en la sintaxis puesto que la lógica es la misma.
+1. Por temas de implementacion y como se ilustra en el comparativo de la creación de expresiones regulares es más sencillo en un lenguaje de alto nivel como Python, pero eso siempre depende en que lenguaje de programación se este implementado la solución que se le ofrece al usuario final, por tanto al final del día y como es casi costumbre en los lenguajes de programación hay que enfocarse en la sintaxis puesto que la lógica es la misma.
 
 **Markdown:**
 
@@ -246,7 +246,7 @@ ___
 
 Los pasos que ha dado el cine a lo largo de más de un siglo de existencia confirman un trayecto histórico plagado de realidades que, en forma de películas, han consolidado una estructura creativa e industrial que ha permitido superar los problemas que han surgido al cabo de los años. En su evolución el cine ha consolidado un lenguaje, ha definido trayectos artísticos, modelos empresariales que han favorecido el surgimiento de carreras artísticas de todo tipo, construidas sobre modelos y representaciones que, en muchos casos, han trascendido su propio ámbito cinematográfico. En el camino, el cine se vio marcado por todo tipo de vanguardias artísticas, movimientos culturales, circunstancias políticas y conflictos bélicos.
 
-Comparto una imágen que se quedó conmigo luego de ver una de mis peliculas favoritas comer,rezar,amar espero sea de su gusto y le recuerde la importancia de estar aqui viviendo en la tierra en tiempo presente, en su momento fue una de las películas que me llevaron al camino de la meditación y el mundo espiritual.
+Comparto una imágen que se quedó conmigo luego de ver una de mis peliculas favoritas comer,rezar,amar espero sea de su gusto y le recuerde la importancia de estar aquí en el ahora viviendo en el planeta tierra, en su momento fue una de las películas que me llevaron al camino de la meditación y el mundo espiritual.
 
 ___
 
@@ -267,15 +267,14 @@ Un espectáculo de masas como es el cine, necesita de una infraestructura indust
 
 
 
-Dicho esto he seleccionado la Web sensacine.com en donde sus usarios han votado por las mejores peliculas que el cine ha producido.
+Dicho esto he seleccionado la Web sensacine.com en donde sus usarios han votado por las mejores peliculas que el cine ha producido, lo he seleccionado para poder extraer los campos que se visualizan en el recuadro verde de la imágen expuesta abajo y que corresponden a : estreno, director, reparto y género. 
 
 
-Si quieres tener mas informacion ingresa a la página fuente:
+Para que te des una idea de lainformacion ingresa a la página fuente:
 [http://www.sensacine.com/peliculas/mejores/nota-espectadores/](link)
 
 
-He realizado el webscraping sobre los campos que se visualizan en el recuadro verde de la imágen y que
-corresponden a : estreno, director, reparto y género.   
+  
 
 <center> 
 ![webscraping.](webscraping3.png)    
@@ -298,7 +297,6 @@ library(dplyr)
 library(formattable)
 library(tidyr)
 library(rmarkdown)
-
 #======================================================================================
 # Webscraping de la URL http://www.sensacine.com/peliculas/mejores/nota-espectadores/
 #======================================================================================
@@ -373,10 +371,8 @@ formattable(famosos, align =c("l","c"), list(
     `director` = formatter("span", style = ~ style(color = "black",font.weight = "bold")),
     `cantidad peliculas`= color_tile(customGreen, customGreen0)
 ))
-
-
 ```
-Las Películas del director más famoso y su puesto en el ranking:
+Las Películas del director más famoso y su correspondiente puesto en el ranking:
 
 ``` {r,echo=FALSE} 
 #Visualualizar las peliculas del director más famoso
@@ -393,8 +389,6 @@ formattable(peliculas_famoso, align =c("l","l","l","l","l","l"), list(
    `reparto`= color_tile(customGreen, customGreen0),
    `genero`= color_tile(customGreen, customRed)
  ))
-
-
 ```
 
 ```
@@ -404,11 +398,21 @@ formattable(peliculas_famoso, align =c("l","l","l","l","l","l"), list(
 ```{r }
 nacionalidad <- c('Nueva Zelanda','Estados Unidos','Reino Unido','Estados Unidos','Estados Unidos')
 famosos['nacionalidad'] <- nacionalidad
-famosos
-peliculas_famoso
+fam <- melt(famosos)
 
+ggplot(fam, aes(x = nacionalidad, y = value)) + geom_boxplot() + facet_wrap(~ variable)
 
+ggplot(fam, aes(x = nacionalidad, y = value)) + 
+  geom_violin(fill = "lightpink") + 
+  facet_wrap(~ variable)
+  
+ggplot(fam, aes(x = nacionalidad, y = value)) + 
+  geom_point() + geom_smooth() + 
+  facet_grid(~ variable)
+  
 ```
+
+
 # Referencias
 
 
