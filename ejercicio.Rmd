@@ -11,6 +11,7 @@ output:
     lightbox : true 
     se_bookdown : true
     df_print: kable
+    
 ---
 
 ``` {css,echo=FALSE}
@@ -395,7 +396,10 @@ formattable(peliculas_famoso, align =c("l","l","l","l","l","l"), list(
 
 # Gráficas
 
+Cantidad de peliculas de los Directores más famosos por nacionalidad.
+
 ```{r }
+
 nacionalidad <- c('Nueva Zelanda','Estados Unidos','Reino Unido','Estados Unidos','Estados Unidos')
 famosos['nacionalidad'] <- nacionalidad
 fam <- melt(famosos)
