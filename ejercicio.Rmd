@@ -353,7 +353,7 @@ DT::datatable(tabla_peliculas,
 
 Este es el top 5 de los directores más famosos:
 
-``` {r} 
+``` {r , echo=FALSE} 
 #======================================================================================
 # Visualización de Tablas
 #======================================================================================
@@ -398,7 +398,7 @@ formattable(peliculas_famoso, align =c("l","l","l","l","l","l"), list(
 
 Cantidad de peliculas de los Directores más famosos por nacionalidad.
 
-```{r }
+```{r , echo=FALSE}
 
 nacionalidad <- c('Nueva Zelanda','Estados Unidos','Reino Unido','Estados Unidos','Estados Unidos')
 famosos['nacionalidad'] <- nacionalidad
