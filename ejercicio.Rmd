@@ -359,9 +359,9 @@ Este es el top 5 de los directores más famosos:
 # Visualización de Tablas
 #======================================================================================
 # set colors
-customGreen0 = "#DeF7E9"
-customGreen = "#71CA97"
-customRed = "#ff7f7f"
+customGreen0 = "#f5c1ed"
+customGreen = "#c183eb"
+customRed = "#e3b8d5"
 
 # encontrar el top de los directores más famosos
 directores <- table(tabla_peliculas$director)
@@ -394,16 +394,19 @@ formattable(peliculas_famoso, align =c("l","l","l","l","l","l"), list(
    `genero`= color_tile(customGreen, customRed)
  ))
 
+
+```
+
 ```
 
 # Gráficas
 
-
-```{r}
-library(ggplot2)
+```{r }
 nacionalidad <- c('Nueva Zelanda','Estados Unidos','Reino Unido','Estados Unidos','Estados Unidos')
 famosos['nacionalidad'] <- nacionalidad
 famosos
+peliculas_famoso
+
 
 ```
 # Referencias
